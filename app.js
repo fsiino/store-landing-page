@@ -14,3 +14,14 @@ mongoose
   .connect(db, { useNewURLParser: true })
   .then(() => console.log("Connected to MongoDB successfully"))
   .catch(err => console.log(err));
+
+const users = require("./routes/api/users");
+const products = require("./routes/api/products");
+
+app.use("/api/users", users)
+app.use("/api/products", products)
+
+const bodyParser = require('body-parser');
+
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
