@@ -107,6 +107,6 @@ const ProductSchema = new Schema({
   distance_str: {
     type: String
   }
-})
+});
 
-module.exports = User = mongoose.model('inventory', ProductSchema);
+module.exports = Product = mongoose.model('products', ProductSchema);

@@ -1,4 +1,4 @@
-db.inventory.insertMany([
+db.products.insertMany([
   {
       "advertisement_id":"1404656",
       "product_id":"66271553944850558",
