@@ -13,13 +13,18 @@ class Products extends React.Component {
     this.props.fetchProducts(() => (this.setState({
       products: this.props.products,
     })));
+    // this.props.fetchProducts();
   }
 
   render() {
+
+    if (!this.props.products) return 'loading';
+
+    // debugger
     return (
       <div> 
         This will be all the products
-        {Object.values(this.state.products).map(product => 
+        {this.props.products.map(product => 
           <div>
             {product.title}
           </div>

@@ -17,13 +17,11 @@ export const receiveProduct = product => {
   };
 };
 
-export const fetchProducts = () => { 
-  return dispatch => {
-    return ProductAPIUtil.fetchProducts().then(products => {
-      return dispatch(receiveProducts(products.data));
-    });
-  };
-};
+export const fetchProducts = () => dispatch => (
+  ProductAPIUtil.fetchProducts().then(products => (
+    dispatch(receiveProducts(products.data))
+  ))
+);
 
 export const fetchProduct = (id) => {
   return dispatch => {
