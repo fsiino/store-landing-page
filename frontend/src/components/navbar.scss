@@ -1,0 +1,23 @@
+.navbar-container {
+  display: flex;
+  justify-content: space-between
+}
+
+.nb-logo-wrapper {
+  display: flex;
+  flex-direction: column;
+  font-family: HPSimplified,HP Simplified,arial;
+  color: #0096d6;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.hp-logo {
+  width: 55px;
+}
+
+.welcome, .nav-links, .nb-logo-wrapper {
+  line-height: 2;
+  padding: 0 10px 0 10px;
+}
+
