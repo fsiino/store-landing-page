@@ -1,32 +1,31 @@
 import React from 'react';
 
+import './products.scss';
+
 class Products extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       products: props.products
-    }
+    };
   }
   
-
   componentDidMount() {
     this.props.fetchProducts(() => (this.setState({
       products: this.props.products,
     })));
-    // this.props.fetchProducts();
   }
 
   render() {
 
     if (!this.props.products) return 'loading';
 
-    // debugger
     return (
-      <div> 
-        This will be all the products
+      <div className="products-container"> 
         {this.props.products.map(product => 
-          <div>
-            {product.title}
+          <div className="product-idx-tile" key={product.product_id}>
+            <h3>{product.title}</h3>
+              <img src={product.media[0].sizes[Array.length-1].url} className="product-idx-img"/>
           </div>
         )}
       </div>

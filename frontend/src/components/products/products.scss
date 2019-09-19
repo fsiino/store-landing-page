@@ -1,0 +1,15 @@
+.products-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+}
+
+.product-idx-tile {
+  width: 300px;
+  padding: 10px;
+}
+
+.product-idx-img {
+  width: 250px;
+}
