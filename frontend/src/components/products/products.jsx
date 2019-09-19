@@ -52,13 +52,12 @@ class Products extends React.Component {
 
     return (
       <div className="products-container"> 
-        {this.props.products.map((product, i) => 
+        {this.props.products.map((product) => 
           <div className="product-idx-tile" key={product.product_id}>
-            <Link to={`/products/${product.product_id}`}>
-              <div className="product-title">{product.title}</div>
-            </Link>  
+            
             <div className="img-tile-wrapper">
               <AwesomeSlider>
+                <div data-src={product.media[0].sizes[0].url} className="product-idx-img"/>
                 <div data-src={product.media[0].sizes[0].url} className="product-idx-img"/>
                 <div data-src={product.media[0].sizes[0].url} className="product-idx-img"/>
 
@@ -66,8 +65,16 @@ class Products extends React.Component {
               </AwesomeSlider>
             </div>
             <div>
-              <h5>${product.price}.00</h5>
-              <h5>Date Listed: {convertDate(product.created_at)}, at {convertTime(product.created_at)}</h5>
+              <div className="product-idx-details">
+                <Link to={`/products/${product.product_id}`}>
+                  <div className="product-title">{product.title}</div>
+                </Link>  
+                <h5>Date Listed: {convertDate(product.created_at)}, at {convertTime(product.created_at)}</h5>
+                <span className="product-price">${product.price}.00</span>
+                <div>
+                  <button className="product-idx-atc">Add To Cart</button>
+                </div>
+              </div>
             </div>
           </div>
         )}

@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { fetchProduct } from '../../actions/products_actions';
-import Products from './products';
+import ProductDetail from './product_detail';
 
 const mSTP = (state, ownProps) => {
   const productId = ownProps.match.params.product_id;
@@ -16,4 +16,4 @@ const mDTP = dispatch => ({
 export default connect(
   mSTP,
   mDTP
-)(Products);
+)(ProductDetail);
