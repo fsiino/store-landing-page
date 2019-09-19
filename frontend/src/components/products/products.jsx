@@ -1,6 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import './products.scss';
+
+import AwesomeSlider from 'react-awesome-slider';
+import 'react-awesome-slider/dist/styles.css';
 
 class Products extends React.Component {
   constructor(props) {
@@ -40,7 +44,7 @@ class Products extends React.Component {
       }
 
       mins < 10 ? mins = `0${mins}` : mins = mins;
-      
+
       return `${hours}:${mins} ${amPm}`;
     };
 
@@ -48,14 +52,23 @@ class Products extends React.Component {
 
     return (
       <div className="products-container"> 
-        {this.props.products.map(product => 
+        {this.props.products.map((product, i) => 
           <div className="product-idx-tile" key={product.product_id}>
-            <h3>{product.title}</h3>
-              <img src={product.media[0].sizes[Array.length-1].url} className="product-idx-img"/>
-              <div>
-                <h5>${product.price}.00</h5>
-                <h5>Date Listed: {convertDate(product.created_at)}, at {convertTime(product.created_at)}</h5>
-              </div>
+            <Link to={`/products/${product.product_id}`}>
+              <div className="product-title">{product.title}</div>
+            </Link>  
+            <div className="img-tile-wrapper">
+              <AwesomeSlider>
+                <div data-src={product.media[0].sizes[0].url} className="product-idx-img"/>
+                <div data-src={product.media[0].sizes[0].url} className="product-idx-img"/>
+
+                {/* { `${product.media[1].sizes[0].url}` === undefined ? null : <div data-src={product.media[1].sizes[0].url} className="product-idx-img" /> } */}
+              </AwesomeSlider>
+            </div>
+            <div>
+              <h5>${product.price}.00</h5>
+              <h5>Date Listed: {convertDate(product.created_at)}, at {convertTime(product.created_at)}</h5>
+            </div>
           </div>
         )}
       </div>

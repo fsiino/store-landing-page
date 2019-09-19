@@ -13,3 +13,23 @@
 .product-idx-img {
   width: 250px;
 }
+
+a {
+  font-size: 20px;
+  letter-spacing: .75px;
+  text-transform: uppercase;
+  text-decoration: none;
+  line-height: inherit;
+  color: #000;
+  font-weight: 400;
+}
+
+.img-tile-wrapper {
+  // height: 500px;
+  // margin: auto;
+}
+
+.product-title {
+  height: 92px;
+  text-align: center;
+}
