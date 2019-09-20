@@ -4,8 +4,20 @@ import { Link } from 'react-router-dom';
 import '../../style/navbar.scss';
 
 class NavBar extends React.Component {
+  constructor(props) {
+    super(props);
+  }
 
   render() {
+
+    const showGoBack = () => {
+      return (
+        <Link to="/">
+          <span>Go Back</span>
+        </Link>
+      )
+    }
+
     return (
       <div className="navbar-container">
         <div className="nb-logo-wrapper">
@@ -16,14 +28,17 @@ class NavBar extends React.Component {
           <Link to="/">
             <img src="https://ssl.www8.hp.com/us/en/images/i/hpi/header-footer/caas-hf-v3.2/hpi-hp-logo-pr.gif" alt="logo" className="hp-logo"/>
           </Link>
+          
+          {showGoBack()}
+
         </div>
 
         <div className="welcome">
-          Welcome, user
+          Welcome, User
         </div>
 
         <div className="nav-links">
-          Sign In
+          See All Users
         </div>
       </div>
     )

@@ -30,20 +30,17 @@ const ProductList = ({ products }) => {
       return `${hours}:${mins} ${amPm}`;
     };
 
-
     return (
       <div className="products-container">
-        {products.map((product) =>
+        {products.map((product) => 
+
           <div className="product-idx-tile" key={product.product_id}>
 
             <div className="img-tile-wrapper">
               <AwesomeSlider>
                 <div data-src={product.media[0].sizes[0].url} className="product-idx-img" />
                 <div data-src={product.media[0].sizes[0].url} className="product-idx-img" />
-                <div data-src={product.media[0].sizes[0].url} className="product-idx-img" />
-
-                {/* { `${product.media[1].sizes[0].url}` === undefined ? null : <div data-src={product.media[1].sizes[0].url} className="product-idx-img" /> } */}
-              </AwesomeSlider>
+                </AwesomeSlider>
             </div>
             <div>
               <div className="product-idx-details">
@@ -51,7 +48,7 @@ const ProductList = ({ products }) => {
                   <div className="product-title">{product.title}</div>
                 </Link>
                 <h5>Date Listed: {convertDate(product.created_at)}, at {convertTime(product.created_at)}</h5>
-                <div className="product-price">${product.price}.00</div>
+                <div className="product-price">{product.currency_symbol}{product.price}.00</div>
                 <div>
                   <button className="product-idx-atc">Add To Cart</button>
                 </div>
@@ -62,6 +59,5 @@ const ProductList = ({ products }) => {
       </div>
     )
   }
-// }
 
 export default ProductList;

@@ -10,7 +10,8 @@ const productsReducer = (oldState = {}, action) => {
       nextState = action.products;
       return nextState;
     case RECEIVE_PRODUCT:
-      nextState = Object.assign({}, oldState, action.product );
+      // nextState = Object.assign({}, oldState, action.product );
+      nextState = Object.assign({}, action.product );
       return nextState;
     default:
       return oldState;

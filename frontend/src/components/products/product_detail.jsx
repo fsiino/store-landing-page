@@ -2,6 +2,9 @@ import React from 'react';
 
 import '../../style/product_detail.scss';
 
+import AwesomeSlider from 'react-awesome-slider';
+import 'react-awesome-slider/dist/styles.css';
+
 class ProductDetail extends React.Component {
   constructor(props) {
     super(props);
@@ -11,6 +14,7 @@ class ProductDetail extends React.Component {
   }
 
   componentDidMount() {
+    window.scrollTo(0,0)
     this.props.fetchProduct(this.props.match.params.id, () => {
       this.setState({
         product: this.props.product
@@ -25,11 +29,57 @@ class ProductDetail extends React.Component {
       return p.product_id  === productId 
     }) || {};
 
+// debugger
+
+    if (!product.media) return 'loading';
+
+    const getImgs = () => {
+      let imgs = [];
+      for (let i = 0; i < product.media.length; i++) {
+        imgs.push(<div data-src={product.media[i].sizes[0].url} className="product-idx-img" />)
+      }
+      return imgs;
+    };
 
     return (
       <>
-        <h1>Testing the detail page</h1>
-        The product is {product.title}
+      <div className="bg">
+        <div className="product-detail-container">
+          <div className="product-detail-img-wrapper">
+            <AwesomeSlider>
+
+            {getImgs()}
+
+            </AwesomeSlider>
+          </div>
+          <div className="product-detail-desc-wrapper">
+            <div className="product-detail-title">
+              {product.title}
+            </div>
+            
+            <div>
+              <span>Sold by: </span>
+              {product.seller.first_name} {product.seller.last_name}
+            </div>
+            <div>
+              <span>Description: </span>
+              {product.description}
+            </div>
+            <div>
+              <span>Location: </span>
+              {product.seller.country}
+            </div>
+
+            
+            <div className="price-atc-wrapper">
+              <div>
+                {product.currency_symbol}{product.price}.00
+            </div>
+              <button className="product-detail-atc">Add To Cart</button>
+            </div>
+          </div>
+        </div>
+        </div>
       </>
       
     )
