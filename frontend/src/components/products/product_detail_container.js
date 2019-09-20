@@ -10,7 +10,8 @@ const mSTP = (state, ownProps) => {
     p => p.product_id === productId
   )
   return ({
-    product
+    // product
+    products
   });
 }
 
