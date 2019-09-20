@@ -34,7 +34,7 @@ const ProductList = ({ products }) => {
       } else {
         amPm = 'AM';
       }
-      mins < 10 ? mins = `0${mins}` : mins = mins;
+      mins < 10 ? mins = `0${mins}` : mins = newDate.getMinutes();
       return `${hours}:${mins} ${amPm}`;
     };
 

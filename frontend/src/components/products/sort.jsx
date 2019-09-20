@@ -7,8 +7,8 @@ const SortFilter = (props) => {
     <div className="sort-filter-wrapper">
       <select defaultValue="Sort" onChange={props.handleSort}>
         <option disabled value="Sort">Sort</option>
-        <option value="Name: Ascending">Name: Ascending</option>
-        <option value="Name: Descending">Name: Descending</option>
+        <option value="Title: Ascending">Title: Ascending</option>
+        <option value="Title: Descending">Title: Descending</option>
         <option value="Price: Low to High">Price: Low to High</option>
         <option value="Price: High to Low">Price: High to Low</option>
         <option value="Date Posted: Newest">Date Posted: Newest</option>

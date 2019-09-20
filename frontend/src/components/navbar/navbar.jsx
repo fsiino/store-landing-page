@@ -1,5 +1,5 @@
 import React from 'react';
-import { withRouter, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import '../../style/navbar.scss';
 
@@ -14,7 +14,7 @@ class NavBar extends React.Component {
           </Link>
           <hr></hr>
           <Link to="/">
-            <img src="https://ssl.www8.hp.com/us/en/images/i/hpi/header-footer/caas-hf-v3.2/hpi-hp-logo-pr.gif" className="hp-logo"/>
+            <img src="https://ssl.www8.hp.com/us/en/images/i/hpi/header-footer/caas-hf-v3.2/hpi-hp-logo-pr.gif" alt="logo" className="hp-logo"/>
           </Link>
         </div>
 
