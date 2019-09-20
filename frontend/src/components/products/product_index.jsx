@@ -1,14 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import './product_index.scss';
+import '../../style/product_index.scss'
 
 import AwesomeSlider from 'react-awesome-slider';
 import 'react-awesome-slider/dist/styles.css';
 
 import SortFilter from './sort';
 
-class Products extends React.Component {
+import ProductList from './product_list';
+
+class ProductIndex extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -19,7 +21,6 @@ class Products extends React.Component {
   }
 
   handleSort(e) {
-    console.log('it works');
     this.setState({ sort: e.target.value });
   }
 
@@ -29,45 +30,55 @@ class Products extends React.Component {
   //   })
   // }
   
+  // componentDidMount() {
+  //   this.props.fetchProducts(() => (this.setState({
+  //     products: this.props.products
+  //   })));
+  // }
+
   componentDidMount() {
-    this.props.fetchProducts(() => (this.setState({
-      products: this.props.products,
-    })));
+    this.props.fetchProducts()
+      .then(this.setState({
+        products: this.props.products
+      }))
   }
 
   render() {
+// debugger
+
+    if (!this.state.products) return 'loading';
 
     // const intToFloat = (num, decPlaces) => { return num.toFixed(decPlaces); };
 
-    const sortedProducts = this.state.products.sort((a,b) => {
+    const sortedProducts = this.props.products.sort((a,b) => {
       if (this.state.sort === 'Date Posted: Newest') {
         return parseInt(b.created_at.substring(0, 4)) - parseInt(a.created_at.substring(0, 4))
-      } else if (this.state.sort === 'Date Posted: Newest') {
+      } else if (this.state.sort === 'Date Posted: Oldest') {
         return parseInt(a.created_at.substring(0, 4)) - parseInt(b.created_at.substring(0, 4))
       }
     })
 
-    const convertDate = (date) => {
-      let newDate = new Date(date);
-      return `${1 + newDate.getMonth()}/${newDate.getDate()}/${1900 + newDate.getYear()}`;
-    };
+    // const convertDate = (date) => {
+    //   let newDate = new Date(date);
+    //   return `${1 + newDate.getMonth()}/${newDate.getDate()}/${1900 + newDate.getYear()}`;
+    // };
 
-    const convertTime = (time) => {
-      let newDate = new Date(time);
-      let amPm;
-      let hours = newDate.getHours();
-      let mins = newDate.getMinutes();
-      if (hours > 12) {
-        amPm = 'PM';
-        hours -= 12;
-      } else {
-        amPm = 'AM';
-      }
-      mins < 10 ? mins = `0${mins}` : mins = mins;
-      return `${hours}:${mins} ${amPm}`;
-    };
+    // const convertTime = (time) => {
+    //   let newDate = new Date(time);
+    //   let amPm;
+    //   let hours = newDate.getHours();
+    //   let mins = newDate.getMinutes();
+    //   if (hours > 12) {
+    //     amPm = 'PM';
+    //     hours -= 12;
+    //   } else {
+    //     amPm = 'AM';
+    //   }
+    //   mins < 10 ? mins = `0${mins}` : mins = mins;
+    //   return `${hours}:${mins} ${amPm}`;
+    // };
 
-    if (!this.props.products) return 'loading';
+
 
     return (
       <>
@@ -75,8 +86,8 @@ class Products extends React.Component {
         <SortFilter handleSort={this.handleSort}/>
         </div>
 
-        <div className="products-container"> 
-          {this.props.products.map((product) => 
+        {/* <div className="products-container"> 
+          {this.state.products.map((product) => 
             <div className="product-idx-tile" key={product.product_id}>
               
               <div className="img-tile-wrapper">
@@ -85,7 +96,7 @@ class Products extends React.Component {
                   <div data-src={product.media[0].sizes[0].url} className="product-idx-img"/>
                   <div data-src={product.media[0].sizes[0].url} className="product-idx-img"/>
 
-                  {/* { `${product.media[1].sizes[0].url}` === undefined ? null : <div data-src={product.media[1].sizes[0].url} className="product-idx-img" /> } */}
+                  { `${product.media[1].sizes[0].url}` === undefined ? null : <div data-src={product.media[1].sizes[0].url} className="product-idx-img" /> }
                 </AwesomeSlider>
               </div>
               <div>
@@ -102,10 +113,11 @@ class Products extends React.Component {
               </div>
             </div>
           )}
-        </div>
+        </div> */}
+        <ProductList products={sortedProducts}/>
       </>
     )
   }
 }
 
-export default Products;
+export default ProductIndex;

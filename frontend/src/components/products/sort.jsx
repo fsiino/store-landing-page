@@ -1,8 +1,10 @@
 import React from 'react'
 
+import '../../style/product_index.scss';
+
 const SortFilter = (props) => {
   return (
-    <div>
+    <div className="sort-filter-wrapper">
       <select defaultValue="Sort" onChange={props.handleSort}>
         <option disabled value="Sort">Sort</option>
         <option value="Name: Ascending">Name: Ascending</option>

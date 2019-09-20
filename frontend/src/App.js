@@ -3,8 +3,9 @@ import logo from './logo.svg';
 import './App.css';
 import { Link, Switch, Route } from 'react-router-dom';
 import NavBar from './components/navbar/navbar';
-import ProductContainer from './components/products/products_container';
+import ProductIndexContainer from './components/products/product_index_container';
 import ProductDetailContainer from './components/products/product_detail_container';
+
 
 function App() {
   return (
@@ -12,8 +13,8 @@ function App() {
       <NavBar/>
       
       <Switch>
-        <Route exact path="/" component={ProductContainer} />
-        <Route exact path="/products" component={ProductContainer} />
+        <Route exact path="/" component={ProductIndexContainer} />
+        <Route exact path="/products" component={ProductIndexContainer} />
         <Route exact path="/products/:id" component={ProductDetailContainer} />
       </Switch>
 
