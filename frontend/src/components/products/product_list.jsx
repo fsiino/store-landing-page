@@ -9,14 +9,6 @@ import 'react-awesome-slider/dist/styles.css';
 
 
 const ProductList = ({ products }) => {
-  // constructor(props) {
-  //   super(props);
-  //   // this.state = {
-  //   //   products: props.products
-  //   // }
-  // }
-
-  // render() {
 
     const convertDate = (date) => {
       let newDate = new Date(date);

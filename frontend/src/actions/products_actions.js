@@ -23,10 +23,8 @@ export const fetchProducts = () => dispatch => (
   ))
 );
 
-export const fetchProduct = (id) => {
-  return dispatch => {
-    return ProductAPIUtil.fetchProduct(id).then(product => {
-      return dispatch(receiveProduct(product));
-    });
-  };
-};
+export const fetchProduct = (id) => dispatch => (
+  ProductAPIUtil.fetchProduct(id).then(product => (
+    dispatch(receiveProduct(product.data))
+  ))
+);

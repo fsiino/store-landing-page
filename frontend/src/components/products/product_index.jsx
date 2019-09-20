@@ -2,7 +2,6 @@ import React from 'react';
 
 import '../../style/product_index.scss'
 
-import AwesomeSlider from 'react-awesome-slider';
 import 'react-awesome-slider/dist/styles.css';
 
 import SortFilter from './sort';
@@ -31,16 +30,10 @@ class ProductIndex extends React.Component {
   }
 
   render() {
-// debugger
 
     if (!this.state.products) return 'loading';
 
-    // const intToFloat = (num, decPlaces) => { return num.toFixed(decPlaces); };
-
-    
-
     const sortedProducts = this.props.products.sort((a,b) => {
-debugger
       if (this.state.sort === 'Date Posted: Newest') {
         return new Date(b.created_at) - new Date(a.created_at);
       } else if (this.state.sort === 'Date Posted: Oldest') {
