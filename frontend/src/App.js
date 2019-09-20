@@ -16,7 +16,7 @@ function App() {
       <NavBarContainer/>
       
       <Switch>
-        <Route exact path="/" component={Main} />
+        <AuthRoute exact path="/" component={Main} />
         <AuthRoute exact path="/login" component={LoginFormContainer} />
         <AuthRoute exact path="/signup" component={SignupFormContainer} />
         <ProtectedRoute exact path="/products" component={ProductIndexContainer} />
