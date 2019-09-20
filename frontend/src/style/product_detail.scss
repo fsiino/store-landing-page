@@ -16,9 +16,10 @@
   padding-right: 40px;
 }
 
-.product-detail-desc-wrapper {
+.product-detail-right-wrapper {
   display: inline-block;
   width: 38%;
+  position: relative;
 }
 
 .product-detail-title {
@@ -47,4 +48,16 @@
 .price-atc-wrapper {
   display: flex;
   justify-content: space-between;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+}
+
+.product-price {
+  font-size: 28px;
+}
+
+.product-desc-wrapper {
+  position: absolute;
+  top: 30%;
 }

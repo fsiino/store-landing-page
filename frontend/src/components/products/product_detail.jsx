@@ -52,29 +52,30 @@ class ProductDetail extends React.Component {
 
             </AwesomeSlider>
           </div>
-          <div className="product-detail-desc-wrapper">
+          <div className="product-detail-right-wrapper">
             <div className="product-detail-title">
               {product.title}
             </div>
             
-            <div>
-              <span>Sold by: </span>
-              {product.seller.first_name} {product.seller.last_name}
-            </div>
-            <div>
-              <span>Description: </span>
-              {product.description}
-            </div>
-            <div>
-              <span>Location: </span>
-              {product.seller.country}
-            </div>
-
+            <ul className="product-desc-wrapper">
+              <li>
+                <span>Sold by: </span>
+                {product.seller.first_name} {product.seller.last_name}
+              </li>
+              <li>
+                <span>Description: </span>
+                {product.description}
+              </li>
+              <li>
+                <span>Location: </span>
+                {product.seller.country}
+              </li>
+            </ul>
             
             <div className="price-atc-wrapper">
-              <div>
+              <div className="product-price">
                 {product.currency_symbol}{product.price}.00
-            </div>
+              </div>
               <button className="product-detail-atc">Add To Cart</button>
             </div>
           </div>
