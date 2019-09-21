@@ -1,5 +1,6 @@
 import axios from 'axios';
 
+// We've been using this method in previos steps
 export const setAuthToken = token => {
   if (token) {
     axios.defaults.headers.common['Authorization'] = token;
@@ -15,4 +16,3 @@ export const signup = (userData) => {
 export const login = (userData) => {
   return axios.post('/api/users/login', userData);
 };
-

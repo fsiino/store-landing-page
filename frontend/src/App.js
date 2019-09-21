@@ -19,8 +19,10 @@ function App() {
         <AuthRoute exact path="/" component={Main} />
         <AuthRoute exact path="/login" component={LoginFormContainer} />
         <AuthRoute exact path="/signup" component={SignupFormContainer} />
-        <ProtectedRoute exact path="/products" component={ProductIndexContainer} />
-        <ProtectedRoute exact path="/products/:id" component={ProductDetailContainer} />
+        {/* <ProtectedRoute exact path="/products" component={ProductIndexContainer} />
+        <ProtectedRoute exact path="/products/:id" component={ProductDetailContainer} /> */}
+        <Route exact path="/products" component={ProductIndexContainer} />
+        <Route exact path="/products/:id" component={ProductDetailContainer} />
       </Switch>
 
     </div>

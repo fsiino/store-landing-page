@@ -3,7 +3,7 @@ import { fetchProducts } from '../../actions/products_actions';
 import ProductIndex from './product_index';
 
 const mSTP = state => ({
-  products: Object.values(state.entities.products)
+  products: Object.values(state.products)
 });
 
 const mDTP = dispatch => ({

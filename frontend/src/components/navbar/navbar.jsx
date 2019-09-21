@@ -6,16 +6,49 @@ import '../../style/navbar.scss';
 class NavBar extends React.Component {
   constructor(props) {
     super(props);
+    this.logoutUser = this.logoutUser.bind(this);
+  }
+
+  logoutUser(e) {
+    e.preventDefault();
+    this.props.logout();
   }
 
   render() {
 
     const showGoBack = () => {
       return (
-        <Link to="/">
+        <Link to="/products">
           <span>Go Back</span>
         </Link>
       )
+    }
+
+    const showLogout = () => {
+      if (this.props.loggedIn) {
+        return (
+          <button onClick={this.logoutUser}>Logout</button>
+        )
+      } else {
+        return (
+          <center>
+          <Link to="/login">
+            <button>Login</button>
+          </Link>
+          <Link to="/signup">
+            <button>Sign Up</button>
+          </Link>
+          </center>
+        )
+      }
+    }
+
+    const greeting = () => {
+      if (this.props.loggedIn) {
+        return <span>Welcome, User</span>
+      } else {
+        return <span>Youre not logged in</span>
+      }
     }
 
     return (
@@ -34,7 +67,9 @@ class NavBar extends React.Component {
         </div>
 
         <div className="welcome">
-          Welcome, User
+        {greeting()}
+        <br/>
+        {showLogout()}
         </div>
 
         <div className="nav-links">

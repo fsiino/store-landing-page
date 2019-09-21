@@ -3,9 +3,13 @@ import { logout } from '../../actions/session_actions';
 
 import NavBar from './navbar';
 
-const mapStateToProps = state => ({
-  loggedIn: state.session.isAuthenticated
-});
+const mapStateToProps = state => {
+  // debugger
+  return {
+
+    loggedIn: state.session.isAuthenticated || state.session.isSignedIn
+  }
+};
 
 export default connect(
   mapStateToProps,

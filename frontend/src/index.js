@@ -10,22 +10,15 @@ import jwt_decode from 'jwt-decode';
 import { setAuthToken } from './util/session_api_util';
 import { logout } from './actions/session_actions';
 
-
-// document.addEventListener('DOMContentLoaded', () => {
-
-// const store = configureStore();
-// window.getState = store.getState;
-
-// ReactDOM.render(<Root store={store} />, document.getElementById('root'));
-
-// // If you want your app to work offline and load faster, you can change
-// // unregister() to register() below. Note this comes with some pitfalls.
-// // Learn more about service workers: https://bit.ly/CRA-PWA
-// serviceWorker.unregister();
-// });
-
 document.addEventListener('DOMContentLoaded', () => {
   let store;
+
+  // const jwtToken = localStorage.getItem("jwtToken");
+  // if (jwtToken !== "undefined") {
+  //   // Set auth token header auth
+  //   setAuthToken(jwtToken);
+  //   // Decode token and get user info and exp
+  // }
 
   if (localStorage.jwtToken) {
     setAuthToken(localStorage.jwtToken);
@@ -44,6 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     store = configureStore({});
   }
+  window.getState = store.getState;
   const root = document.getElementById('root');
 
   ReactDOM.render(<Root store={store} />, root);
