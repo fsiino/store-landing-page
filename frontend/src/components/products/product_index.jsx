@@ -12,7 +12,8 @@ class ProductIndex extends React.Component {
     this.state = {
       products: props.products,
       sort: '',
-      date: new Date()
+      currentPage: 1,
+      productsperPage: 10
     };
     this.handleSort = this.handleSort.bind(this);
   }

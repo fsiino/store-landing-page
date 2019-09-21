@@ -1,3 +1,8 @@
+.products-idx-container {
+  background-color: #f7f7f7;
+  min-height: 110%;
+}
+
 .products-container {
   display: flex;
   justify-content: center;
@@ -63,4 +68,24 @@
   cursor: not-allowed
 }
 
+.products-pg-container {
+  font-size: 40px;
+  text-align: center;
+  align-content: center;
+  margin: auto;
+  width: 100%;
+  display: flex;  
+  justify-content: center;
+  background-color: #f7f7f7;
 
+  li {
+    float: left;
+    list-style: none;
+    cursor: pointer;
+  }
+
+  li:hover {
+    color: #0096d6;
+  }
+  
+}

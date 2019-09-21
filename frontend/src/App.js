@@ -9,6 +9,7 @@ import Main from './components/main/main';
 import LoginFormContainer from './components/session/login_form_container';
 import SignupFormContainer from './components/session/signup_form_container';
 import UserIndexContainer from './components/users/user_index_container';
+import Footer from './components/footer/footer';
 
 
 function App() {
@@ -26,6 +27,8 @@ function App() {
         <Route exact path="/products/:id" component={ProductDetailContainer} />
         <Route exact path="/users" component={UserIndexContainer} />
       </Switch>
+
+      <Footer/>
 
     </div>
   )
