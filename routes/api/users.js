@@ -19,6 +19,14 @@ router.get('/current', passport.authenticate('jwt', { session: false }), (req, r
   });
 })
 
+router.get('/all_users', (req, res) => {
+  User.find()
+    .select('handle')
+    .select('date')
+    .then(users => res.json( users )
+    );
+});
+
 router.post('/register', (req, res) => {
   const { errors, isValid } = validateRegisterInput(req.body);
 

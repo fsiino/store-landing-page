@@ -1,3 +1,3 @@
-# HP Coding Challenge - Store Landing Page
+# Coding Challenge - Store Landing Page
 
 ...

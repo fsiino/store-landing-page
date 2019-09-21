@@ -1,6 +1,7 @@
 {
   "name": "store-landing-page",
   "version": "1.0.0",
+  "proxy": "http://localhost:5000",
   "main": "app.js",
   "directories": {
     "doc": "docs"
@@ -22,7 +23,6 @@
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.6",
     "bcryptjs": "^2.4.3",
-    "body-parser": "^1.19.0",
     "concurrently": "^4.1.2",
     "create-react-app": "^3.1.1",
     "express": "^4.17.1",

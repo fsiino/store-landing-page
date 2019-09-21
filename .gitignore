@@ -1,3 +1,5 @@
 /node_modules
-/config/keys.js
-frontend/node_modules
+/config
+/frontend/node_modules
+/docs
+/seed-data.json

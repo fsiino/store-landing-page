@@ -34,7 +34,7 @@ class NavBar extends React.Component {
           <center>
           <Link to="/login">
             <button>Login</button>
-          </Link>
+          </Link> &nbsp;
           <Link to="/signup">
             <button>Sign Up</button>
           </Link>
@@ -43,23 +43,32 @@ class NavBar extends React.Component {
       }
     }
 
-    const greeting = () => {
-      if (this.props.loggedIn) {
-        return <span>Welcome, User</span>
-      } else {
-        return <span>Youre not logged in</span>
-      }
-    }
+    const greeting = () => (
+      this.props.loggedIn ? (
+        <span>Welcome, User</span>
+       ) : (
+         <span>You're not logged in</span>
+       )
+    )
+
+    const showUsers = () => (
+      this.props.loggedIn ? (
+      <div className="nav-links">
+        <Link to="/users">
+          See All Users
+          </Link>
+      </div> ) : <>&nbsp;</>
+    )
 
     return (
       <div className="navbar-container">
         <div className="nb-logo-wrapper">
           <Link to="/">
-            <div>HP Store</div>
+            <div>Home</div>
           </Link>
           <hr></hr>
           <Link to="/">
-            <img src="https://ssl.www8.hp.com/us/en/images/i/hpi/header-footer/caas-hf-v3.2/hpi-hp-logo-pr.gif" alt="logo" className="hp-logo"/>
+            <img src={process.env.PUBLIC_URL + `/fs-logo.png`} alt="logo" className="logo"/>
           </Link>
           
           {showGoBack()}
@@ -72,9 +81,9 @@ class NavBar extends React.Component {
         {showLogout()}
         </div>
 
-        <div className="nav-links">
-          See All Users
-        </div>
+      <div className="nb-logo-wrapper">
+        {showUsers()}
+      </div>
       </div>
     )
   }

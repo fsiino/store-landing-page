@@ -8,6 +8,7 @@ import ProductDetailContainer from './components/products/product_detail_contain
 import Main from './components/main/main';
 import LoginFormContainer from './components/session/login_form_container';
 import SignupFormContainer from './components/session/signup_form_container';
+import UserIndexContainer from './components/users/user_index_container';
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
         <ProtectedRoute exact path="/products/:id" component={ProductDetailContainer} /> */}
         <Route exact path="/products" component={ProductIndexContainer} />
         <Route exact path="/products/:id" component={ProductDetailContainer} />
+        <Route exact path="/users" component={UserIndexContainer} />
       </Switch>
 
     </div>

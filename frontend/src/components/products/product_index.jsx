@@ -2,8 +2,6 @@ import React from 'react';
 
 import '../../style/product_index.scss'
 
-import 'react-awesome-slider/dist/styles.css';
-
 import SortFilter from './sort';
 
 import ProductList from './product_list';
