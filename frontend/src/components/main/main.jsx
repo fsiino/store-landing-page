@@ -9,15 +9,9 @@ class Main extends React.Component {
     return (
       <center>
         <div className="main-container">
-          {/* <h2>Welcome</h2> */}
-          {/* <Link to="/login">
-            Login
-          </Link>
-          &nbsp; | &nbsp;
-          <Link to="/signup">
-            Sign Up
-          </Link> */}
-          {/* <p>Store Front App</p> */}
+          <h2>Welcome</h2>
+          <br/>
+          <h5>Please login or sign up to access the app</h5>
         </div>
       </center>
     );

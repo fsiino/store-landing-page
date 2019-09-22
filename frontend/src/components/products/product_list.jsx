@@ -100,6 +100,9 @@ class ProductList extends React.Component {
 
   return (
     <div className="products-idx-container">
+      <div className="products-pg-container">
+        Page:&nbsp; {renderPageNums}
+      </div>
       <div className="products-container">
         {renderProducts}
       </div>

@@ -7,6 +7,7 @@ class NavBar extends React.Component {
   constructor(props) {
     super(props);
     this.logoutUser = this.logoutUser.bind(this);
+    this.goBack = this.goBack.bind(this);
   }
 
   logoutUser(e) {
@@ -14,16 +15,18 @@ class NavBar extends React.Component {
     this.props.logout();
   }
 
+  goBack() {
+    this.props.history.goBack();
+  }
+
   render() {
     
     const showGoBack = () => {
       if (
-        this.props.location.pathname !== '/' && this.props.location.pathname !== '/products' && this.props.location.pathname !== '/users' && this.props.location.pathname !== '/login' &&  this.props.location.pathname !== '/signup'
+        this.props.location.pathname !== '/' && this.props.location.pathname !== '/products' && this.props.location.pathname !== '/login' &&  this.props.location.pathname !== '/signup'
         ) {
         return (
-          <Link to="/products">
-            <span>Go Back</span>
-          </Link>
+          <span className="go-bk-btn" onClick={this.goBack}>Go Back</span>
         )
       }
     }
@@ -61,6 +64,10 @@ class NavBar extends React.Component {
         <Link to="/users">
           See All Users
           </Link>
+          <br/>
+        <link to="/products">
+          Shop Our Products
+        </link>
       </div> ) : <>&nbsp;</>
     )
 
@@ -70,7 +77,7 @@ class NavBar extends React.Component {
           <Link to="/">
             <div>Home</div>
           </Link>
-          <Link to="/">
+          <Link to="/products">
             <img src={process.env.PUBLIC_URL + `/fs-logo.png`} alt="logo" className="logo"/>
           </Link>
           

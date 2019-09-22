@@ -23,7 +23,7 @@ class ProductIndex extends React.Component {
   }
   
   componentDidMount() {
-    // debugger
+    
     this.props.fetchProducts(() => (this.setState({
       products: this.props.products
     })));
