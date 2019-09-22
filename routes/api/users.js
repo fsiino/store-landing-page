@@ -9,22 +9,27 @@ const passport = require('passport');
 const validateRegisterInput = require('../../validation/register');
 const validateLoginInput = require('../../validation/login');
 
-router.get("/test", (req, res) => res.json({ msg: "This is the users route" }));
-
 router.get('/current', passport.authenticate('jwt', { session: false }), (req, res) => {
   res.json({
     id: req.user.id,
     handle: req.user.handle,
     email: req.user.email
   });
-})
+});
 
 router.get('/all_users', (req, res) => {
   User.find()
     .select('handle')
     .select('date')
-    .then(users => res.json( users )
-    );
+    .then(users => res.json( users ))
+    .catch(err => res.status(404).json({ msg: 'no users found'} ));
+});
+
+router.get('/:user_id', (req, res) => {
+  User.find({ user_id: req.params.user_id })
+    .select('handle')
+    .then(user => res.json( user ))
+    .catch(err => res.status(404).json({ msg: 'no user with that id' }));
 });
 
 router.post('/register', (req, res) => {
@@ -46,7 +51,7 @@ router.post('/register', (req, res) => {
           handle: req.body.handle,
           email: req.body.email,
           password: req.body.password
-        })
+        });
 
         bcrypt.genSalt(10, (err, salt) => {
           bcrypt.hash(newUser.password, salt, (err, hash) => {
@@ -55,11 +60,11 @@ router.post('/register', (req, res) => {
             newUser.save()
               .then(user => res.json(user))
               .catch(err => console.log(err));
-          })
-        })
+          });
+        });
       }
-    })
-})
+    });
+});
 
 
 router.post('/login', (req, res) => {

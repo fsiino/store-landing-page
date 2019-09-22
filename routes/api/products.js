@@ -17,7 +17,7 @@ router.get("/", (req, res) => {
 router.get("/:product_id", (req, res) => {
   Product.find({ product_id: req.params.product_id })
     .sort({ title: 1 })
-    .then(products => res.json(products))
+    .then(product => res.json(product))
     .catch(err => res.status(404).json({ noproductsfound: 'No product found with that id' }));
 });
 

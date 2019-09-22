@@ -15,10 +15,10 @@ class ProductDetail extends React.Component {
 
   componentDidMount() {
     window.scrollTo(0,0)
-    this.props.fetchProduct(this.props.match.params.id, () => {
+    this.props.fetchProduct(this.props.match.params.id, () => (
       this.setState({
         product: this.props.product
-      })})
+      })))
   }
 
   render() {

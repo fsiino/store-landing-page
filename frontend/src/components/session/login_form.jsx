@@ -62,6 +62,8 @@ class LoginForm extends React.Component {
   render() {
     return (
       <center>
+        <h2>Welcome</h2>
+        <h5>Please login or sign up to access the app</h5>
       <div className="session-form-container">
         <form onSubmit={this.handleSubmit}>
           <div>

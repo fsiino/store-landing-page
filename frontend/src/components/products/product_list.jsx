@@ -26,8 +26,8 @@ class ProductList extends React.Component {
   }
 
   render() {
-// debugger
-  const convertDate = (date) => {
+  
+    const convertDate = (date) => {
     let newDate = new Date(date);
     return `${1 + newDate.getMonth()}/${newDate.getDate()}/${1900 + newDate.getYear()}`;
   };
@@ -47,7 +47,7 @@ class ProductList extends React.Component {
     return `${hours}:${mins} ${amPm}`;
   };
 
-  const { products, currentPage, productsPerPage } = this.state;
+  const { currentPage, productsPerPage } = this.state;
 
   // Pagination  
   const idxOfLastProduct = currentPage * productsPerPage;

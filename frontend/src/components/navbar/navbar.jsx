@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { logout } from '../../actions/session_actions';
+
 
 import '../../style/navbar.scss';
 
@@ -8,6 +10,14 @@ class NavBar extends React.Component {
     super(props);
     this.logoutUser = this.logoutUser.bind(this);
     this.goBack = this.goBack.bind(this);
+  }
+
+  componentDidMount() {
+    this.props.fetchUsers(() => (
+      this.setState({ 
+        users: this.props.users 
+      })
+    ));
   }
 
   logoutUser(e) {
@@ -20,7 +30,7 @@ class NavBar extends React.Component {
   }
 
   render() {
-    
+
     const showGoBack = () => {
       if (
         this.props.location.pathname !== '/' && this.props.location.pathname !== '/products' && this.props.location.pathname !== '/login' &&  this.props.location.pathname !== '/signup'
@@ -50,19 +60,21 @@ class NavBar extends React.Component {
       }
     }
 
-    const greeting = () => (
-      this.props.loggedIn ? (
-        <span>Welcome, User</span>
-       ) : (
-         <span>You're not logged in</span>
-       )
-    )
+    const greeting = () => {
+      if (this.props.loggedIn) {
+        let currentUser = this.props.users.find(u => u._id === this.props.currentUser.id);
+        return <span>Welcome, {currentUser.handle}</span>
+      } else {
+        return <span>You're not logged in</span>
+      }
+    }
 
     return (
       <div className="navbar-container">
         <div className="nb-logo-wrapper">
+          <Link to="/products">
             <img src={process.env.PUBLIC_URL + `/fs-logo.png`} alt="logo" className="logo"/>
-          
+          </Link>
           {showGoBack()}
 
         </div>
