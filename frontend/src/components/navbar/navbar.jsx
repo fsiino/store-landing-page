@@ -41,7 +41,7 @@ class NavBar extends React.Component {
       }
     }
 
-    const showLogout = () => {
+    const showButtons = () => {
       if (this.props.loggedIn) {
         return (
           <button onClick={this.logoutUser}>Logout</button>
@@ -58,6 +58,17 @@ class NavBar extends React.Component {
           <Link to="/login">
             <button>Login</button>
           </Link>
+        )
+      } else {
+        return (
+          <>
+            <Link to="/signup">
+              <button>Sign Up</button>
+            </Link> &nbsp;
+            <Link to="/login">
+              <button>Login</button>
+            </Link>
+          </>
         )
       }
     }
@@ -86,7 +97,7 @@ class NavBar extends React.Component {
           {greeting()}
           <br/>
           <div className="li-su-btns">
-            {showLogout()}
+            {showButtons()}
           </div>
         </div>
 

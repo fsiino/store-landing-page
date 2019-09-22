@@ -75,8 +75,6 @@ class ProductList extends React.Component {
 
         <div className="img-tile-wrapper">
           <AwesomeSlider>
-            {/* <div data-src={product.media[0].sizes[0].url} className="product-idx-img" />
-            <div data-src={product.media[0].sizes[0].url} className="product-idx-img" /> */}
             {getImgs()}
           </AwesomeSlider>
         </div>
