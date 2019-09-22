@@ -58,28 +58,10 @@ class NavBar extends React.Component {
        )
     )
 
-    const showUsers = () => (
-      this.props.loggedIn ? (
-      <div className="nav-links">
-        <Link to="/users">
-          See All Users
-          </Link>
-          <br/>
-        <Link to="/products">
-          Shop Our Products
-        </Link>
-      </div> ) : <>&nbsp;</>
-    )
-
     return (
       <div className="navbar-container">
         <div className="nb-logo-wrapper">
-          <Link to="/">
-            <div>Home</div>
-          </Link>
-          <Link to="/products">
             <img src={process.env.PUBLIC_URL + `/fs-logo.png`} alt="logo" className="logo"/>
-          </Link>
           
           {showGoBack()}
 
@@ -92,7 +74,19 @@ class NavBar extends React.Component {
         </div>
 
       <div className="nb-logo-wrapper">
-        {showUsers()}
+        
+        <div className="nav-links">
+          <Link to="/">
+            Home
+          </Link>&nbsp;|&nbsp;
+          <Link to="/products">
+            Products
+          </Link>&nbsp;|&nbsp;
+          <Link to="/users">
+            Users
+          </Link>
+        </div> 
+
       </div>
       </div>
     )

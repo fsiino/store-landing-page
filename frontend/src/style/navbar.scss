@@ -1,7 +1,6 @@
 .navbar-container {
   display: flex;
   justify-content: space-between;
-  margin: 0 3% 0 3%;
   font-family: HPSimplified,HP Simplified,arial;
 }
 
@@ -22,15 +21,21 @@
     font-weight: 500;
     text-decoration: none;
   }
+
+  a:hover {
+    color: orange;
+  }
 }
 
 .logo {
   width: 80px;
+  margin-left: 80px;
 }
 
 .welcome, .nav-links, .nb-logo-wrapper {
   line-height: 2;
   text-align: center;
+  width: 100%;
 
     a {
     font-family: HPSimplified,HP Simplified,arial;
@@ -54,10 +59,6 @@ hr {
   height:1px;
 }
 
-.sort-filter-wrapper {
-  padding-left: 2%;
-}
-
 button {
   color: #fff;
   border: 1px solid #0096d6;
@@ -78,4 +79,8 @@ button {
 
 .go-bk-btn {
   cursor: pointer;
+}
+
+.go-bk-btn:hover {
+  color: orange;
 }
