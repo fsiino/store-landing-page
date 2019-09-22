@@ -65,9 +65,9 @@ class NavBar extends React.Component {
           See All Users
           </Link>
           <br/>
-        <link to="/products">
+        <Link to="/products">
           Shop Our Products
-        </link>
+        </Link>
       </div> ) : <>&nbsp;</>
     )
 
