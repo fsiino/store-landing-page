@@ -16,7 +16,7 @@ they were created at.
 X Clicking on a single product should send the user to that products’ detail page, where user can
 see the detailed information about this product.(for ex. seller, created_at, categories,
 product_id etc).
- The user should be able to go back to the main page from the product-detail one.
+X The user should be able to go back to the main page from the product-detail one.
 
 Key points:
 X Use React and Redux to build this app.

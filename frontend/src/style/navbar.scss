@@ -57,3 +57,21 @@ hr {
 .sort-filter-wrapper {
   padding-left: 2%;
 }
+
+button {
+  color: #fff;
+  border: 1px solid #0096d6;
+  background: #0096d6;
+  font-family: HPSimplifiedLight,arial;
+  display: inline-block;
+  cursor: pointer;
+  font-weight: 400;
+  border-radius: 3px;
+  height: 30px;
+  padding: 5px 25px;
+  line-height: 20px;
+  text-transform: uppercase;
+  -webkit-transition: color .4s,background-color .4s,border-color .4s;
+  transition: color .4s,background-color .4s,border-color .4s;
+  font-size: 15px;
+}

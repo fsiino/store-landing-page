@@ -18,14 +18,12 @@ function App() {
       <NavBarContainer/>
       
       <Switch>
-        <AuthRoute exact path="/" component={Main} />
+        <Route exact path="/" component={Main} />
         <AuthRoute exact path="/login" component={LoginFormContainer} />
         <AuthRoute exact path="/signup" component={SignupFormContainer} />
-        {/* <ProtectedRoute exact path="/products" component={ProductIndexContainer} />
-        <ProtectedRoute exact path="/products/:id" component={ProductDetailContainer} /> */}
-        <Route exact path="/products" component={ProductIndexContainer} />
-        <Route exact path="/products/:id" component={ProductDetailContainer} />
-        <Route exact path="/users" component={UserIndexContainer} />
+        <ProtectedRoute exact path="/products" component={ProductIndexContainer} />
+        <ProtectedRoute exact path="/products/:id" component={ProductDetailContainer} />
+        <ProtectedRoute exact path="/users" component={UserIndexContainer} />
       </Switch>
 
       <Footer/>

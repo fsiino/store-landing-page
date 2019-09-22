@@ -1,6 +1,8 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 
+import '../../style/session_form.scss';
+
 class LoginForm extends React.Component {
   constructor(props) {
     super(props);
@@ -60,19 +62,23 @@ class LoginForm extends React.Component {
   render() {
     return (
       <center>
-      <div>
+      <div className="session-form-container">
         <form onSubmit={this.handleSubmit}>
           <div>
+            <label>Email:</label>
+            <br/>
             <input type="text"
               value={this.state.email}
               onChange={this.update('email')}
-              placeholder="Email"
+              // placeholder="Email"
             />
             <br />
+            <label>Password:</label>
+            <br/>
             <input type="password"
               value={this.state.password}
               onChange={this.update('password')}
-              placeholder="Password"
+              // placeholder="Password"
             />
             <br />
             <input type="submit" value="Submit" />

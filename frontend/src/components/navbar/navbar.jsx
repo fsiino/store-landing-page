@@ -15,9 +15,11 @@ class NavBar extends React.Component {
   }
 
   render() {
-
+    
     const showGoBack = () => {
-      if (this.props.location.pathname !== '/' &&       this.props.location.pathname !== '/products' && this.props.location.pathname !== '/users') {
+      if (
+        this.props.location.pathname !== '/' && this.props.location.pathname !== '/products' && this.props.location.pathname !== '/users' && this.props.location.pathname !== '/login' &&  this.props.location.pathname !== '/signup'
+        ) {
         return (
           <Link to="/products">
             <span>Go Back</span>
@@ -68,7 +70,6 @@ class NavBar extends React.Component {
           <Link to="/">
             <div>Home</div>
           </Link>
-          <hr></hr>
           <Link to="/">
             <img src={process.env.PUBLIC_URL + `/fs-logo.png`} alt="logo" className="logo"/>
           </Link>
