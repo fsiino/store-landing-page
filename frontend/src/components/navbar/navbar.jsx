@@ -30,7 +30,7 @@ class NavBar extends React.Component {
   }
 
   render() {
-
+    
     const showGoBack = () => {
       if (
         this.props.location.pathname !== '/' && this.props.location.pathname !== '/products' && this.props.location.pathname !== '/login' &&  this.props.location.pathname !== '/signup'
@@ -47,18 +47,21 @@ class NavBar extends React.Component {
           <button onClick={this.logoutUser}>Logout</button>
         )
       } else {
+        if (this.props.location.pathname === '/login') {
+          return (
+            <Link to="/signup">
+              <button>Sign Up</button>
+            </Link>
+          )
+        } else if (this.props.location.pathname === '/signup') {
         return (
-          <div className="li-su-btns">
           <Link to="/login">
             <button>Login</button>
-          </Link> &nbsp;
-          <Link to="/signup">
-            <button>Sign Up</button>
           </Link>
-          </div>
         )
       }
     }
+  }
 
     const greeting = () => {
       if (this.props.loggedIn) {
@@ -82,7 +85,9 @@ class NavBar extends React.Component {
         <div className="welcome">
           {greeting()}
           <br/>
-          {showLogout()}
+          <div className="li-su-btns">
+            {showLogout()}
+          </div>
         </div>
 
         <div className="nb-links-wrapper">
