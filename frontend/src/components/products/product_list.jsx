@@ -61,13 +61,23 @@ class ProductList extends React.Component {
   }
 
   const renderProducts = currentProducts.map((product, idx) => {
+
+    const getImgs = () => {
+      let imgs = [];
+      for (let i = 0; i < product.media.length; i++) {
+        imgs.push(<div data-src={product.media[i].sizes[0].url} className="product-idx-img" />)
+      }
+      return imgs;
+    };
+
     return (
       <div className="product-idx-tile" key={product.product_id}>
 
         <div className="img-tile-wrapper">
           <AwesomeSlider>
-            <div data-src={product.media[0].sizes[0].url} className="product-idx-img" />
-            <div data-src={product.media[0].sizes[0].url} className="product-idx-img" />
+            {/* <div data-src={product.media[0].sizes[0].url} className="product-idx-img" />
+            <div data-src={product.media[0].sizes[0].url} className="product-idx-img" /> */}
+            {getImgs()}
           </AwesomeSlider>
         </div>
         <div>

@@ -46,7 +46,7 @@ class ProductDetail extends React.Component {
           <div className="product-detail-img-wrapper">
             <AwesomeSlider>
 
-            {getImgs()}
+              {getImgs()}
 
             </AwesomeSlider>
           </div>
