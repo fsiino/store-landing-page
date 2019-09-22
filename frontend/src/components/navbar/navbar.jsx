@@ -38,14 +38,14 @@ class NavBar extends React.Component {
         )
       } else {
         return (
-          <center>
+          <div className="li-su-btns">
           <Link to="/login">
             <button>Login</button>
           </Link> &nbsp;
           <Link to="/signup">
             <button>Sign Up</button>
           </Link>
-          </center>
+          </div>
         )
       }
     }
@@ -68,26 +68,26 @@ class NavBar extends React.Component {
         </div>
 
         <div className="welcome">
-        {greeting()}
-        <br/>
-        {showLogout()}
+          {greeting()}
+          <br/>
+          {showLogout()}
         </div>
 
-      <div className="nb-logo-wrapper">
-        
-        <div className="nav-links">
-          <Link to="/">
-            Home
-          </Link>&nbsp;|&nbsp;
-          <Link to="/products">
-            Products
-          </Link>&nbsp;|&nbsp;
-          <Link to="/users">
-            Users
-          </Link>
-        </div> 
+        <div className="nb-links-wrapper">
+          
+          <div className="nav-links">
+            <Link to="/">
+              Home
+            </Link>&nbsp;|&nbsp;
+            <Link to="/products">
+              Products
+            </Link>&nbsp;|&nbsp;
+            <Link to="/users">
+              Users
+            </Link>
+          </div> 
 
-      </div>
+        </div>
       </div>
     )
   }
