@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const db = require('./config/keys');
+const db = require('./config/keys').mongoURI;
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const passport = require('passport');
@@ -11,7 +11,8 @@ const products = require("./routes/api/products");
 
 mongoose
   .connect(db, { useNewUrlParser: true,
-                 useUnifiedTopology: true })
+                 useUnifiedTopology: true
+                })
   .then(() => console.log("Connected to MongoDB successfully"))
   .catch(err => console.log(err));
 
