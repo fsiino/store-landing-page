@@ -22,14 +22,12 @@ class ProductDetail extends React.Component {
   }
 
   render() {
-
+    
     let productId = this.props.match.params.id;
     let products = this.props.products || [];
     let product = products.find(p => {
       return p.product_id  === productId 
     }) || {};
-
-// debugger
 
     if (!product.media) return 'loading';
 

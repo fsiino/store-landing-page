@@ -17,11 +17,13 @@ class NavBar extends React.Component {
   render() {
 
     const showGoBack = () => {
-      return (
-        <Link to="/products">
-          <span>Go Back</span>
-        </Link>
-      )
+      if (this.props.location.pathname !== '/' &&       this.props.location.pathname !== '/products' && this.props.location.pathname !== '/users') {
+        return (
+          <Link to="/products">
+            <span>Go Back</span>
+          </Link>
+        )
+      }
     }
 
     const showLogout = () => {

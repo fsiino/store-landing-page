@@ -30,7 +30,6 @@ class ProductIndex extends React.Component {
   }
 
   render() {
-
     if (!this.state.products) return 'loading';
 
     const sortedProducts = this.props.products.sort((a,b) => {
