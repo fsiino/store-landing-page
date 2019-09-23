@@ -9,6 +9,7 @@ Publish a sample store landing page with basic product tiles. This application w
 
 ## Features
 ### User Authentication
+Routes are defined on the backend to check for existing accounts with a given email address, compare inputted passwords with their salted and hashed version, and generate session tokens. All login and registration attempts go through validation, such as checking that no field is empty, that both the ```password``` and ```confirm password``` fields for matching values, and enforcing length minimums for ```password``` and ```handle```.
 
 ### Sort Product Tiles
 Users are able to sort the product list by date posted, title, or list price. When an option in the dropdown is selected, a ```handleSort``` method gets called from the ```ProductList``` component, which listens for an ```onChange``` event in the ```SortFilter``` functional component.
@@ -53,6 +54,7 @@ render() {
 Products are broken up into pages for a more dynamic user experience and better performance. Should there be any additional products added to the database, the page feature will automatically increase and map the products accordingly, without the need for any code changes.
 
 ```js
+// product_list.js
 handleClick(e) {
   this.setState({
     currentPage: Number(e.target.id)
@@ -94,6 +96,7 @@ render() {
 * Node.js
 * HTML5
 * Cascading Style Sheets / SASS
-* Passport.js
+* Bcrypt
+* Passport.js middleware
 * <a href="https://github.com/rcaferati/react-awesome-slider">React Awesome Slider</a>
 
