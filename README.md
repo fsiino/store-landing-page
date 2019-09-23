@@ -89,6 +89,11 @@ render() {
   })
 ```
 
+### User Registration Log
+The Users page contains an index of all registered users, along with their registration date and time.
+
+<img src="https://github.com/fsiino/store-landing-page/blob/master/frontend/public/assets/users.png?raw=true" alt="user idx feature"/>
+
 ## Technologies/Libraries
 * MongoDB
 * Express
