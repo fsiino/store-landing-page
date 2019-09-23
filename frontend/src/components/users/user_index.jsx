@@ -1,5 +1,4 @@
 import React from 'react';
-
 import '../../style/user_index.scss'
 
 class UserIndex extends React.Component {
@@ -8,14 +7,6 @@ class UserIndex extends React.Component {
     this.state = {
       users: this.props.users
     };
-  }
-
-  componentDidMount() {
-    this.props.fetchUsers(() => (
-      this.setState({
-        users: this.props.users
-      })
-    ));
   }
 
   render() {

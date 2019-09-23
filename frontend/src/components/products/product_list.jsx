@@ -1,12 +1,8 @@
 import React from 'react';
-
 import { Link } from 'react-router-dom';
-
 import '../../style/product_index.scss';
-
 import AwesomeSlider from 'react-awesome-slider';
 import 'react-awesome-slider/dist/styles.css';
-
 
 class ProductList extends React.Component {
   constructor(props) {

@@ -1,9 +1,6 @@
 import React from 'react';
-
-import '../../style/product_index.scss'
-
+import '../../style/product_index.scss';
 import SortFilter from './sort';
-
 import ProductList from './product_list';
 
 class ProductIndex extends React.Component {

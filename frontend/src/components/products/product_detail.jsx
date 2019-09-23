@@ -26,7 +26,7 @@ class ProductDetail extends React.Component {
     let productId = this.props.match.params.id;
     let products = this.props.products || [];
     let product = products.find(p => {
-      return p.product_id  === productId 
+      return p.product_id  === productId; 
     }) || {};
 
     if (!product.media) return 'loading';

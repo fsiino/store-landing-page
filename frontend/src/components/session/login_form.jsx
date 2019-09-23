@@ -1,6 +1,5 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-
 import '../../style/session_form.scss';
 
 class LoginForm extends React.Component {
@@ -24,7 +23,7 @@ class LoginForm extends React.Component {
     }
 
     // Set or clear errors
-    this.setState({ errors: nextProps.errors })
+    this.setState({ errors: nextProps.errors });
   }
 
   // Handle field updates (called in the render method)
@@ -73,7 +72,6 @@ class LoginForm extends React.Component {
             <input type="text"
               value={this.state.email}
               onChange={this.update('email')}
-              // placeholder="Email"
             />
             <br />
             <label>Password:</label>
@@ -81,7 +79,6 @@ class LoginForm extends React.Component {
             <input type="password"
               value={this.state.password}
               onChange={this.update('password')}
-              // placeholder="Password"
             />
             <br />
             <input type="submit" value="Submit" />

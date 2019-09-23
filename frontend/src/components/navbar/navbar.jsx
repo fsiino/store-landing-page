@@ -1,8 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { logout } from '../../actions/session_actions';
-
-
 import '../../style/navbar.scss';
 
 class NavBar extends React.Component {
@@ -104,9 +101,6 @@ class NavBar extends React.Component {
         <div className="nb-links-wrapper">
           
           <div className="nav-links">
-            <Link to="/">
-              Home
-            </Link>&nbsp;|&nbsp;
             <Link to="/products">
               Products
             </Link>&nbsp;|&nbsp;

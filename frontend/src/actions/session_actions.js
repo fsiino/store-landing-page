@@ -6,7 +6,7 @@ export const RECEIVE_SESSION_ERRORS = "RECEIVE_SESSION_ERRORS";
 export const RECEIVE_USER_LOGOUT = "RECEIVE_USER_LOGOUT";
 export const RECEIVE_USER_SIGN_IN = "RECEIVE_USER_SIGN_IN";
 
-// Dispatch this when our user signs in
+// Dispatch this when  user signs in
 export const receiveCurrentUser = currentUser => ({
   type: RECEIVE_CURRENT_USER,
   currentUser
@@ -23,7 +23,7 @@ export const receiveErrors = errors => ({
   errors
 });
 
-// When our user is logged out, we will dispatch this action to set isAuthenticated to false
+// When  user is logged out, dispatch this action to set isAuthenticated to false
 export const logoutUser = () => ({
   type: RECEIVE_USER_LOGOUT
 });
@@ -47,13 +47,13 @@ export const login = user => dispatch => (
     dispatch(receiveCurrentUser(decoded))
   })
     .catch(err => {
-      console.log(err)
+      console.log(err);
       dispatch(receiveErrors(err.response.data));
     })
 )
 
 export const logout = () => dispatch => {
-  localStorage.removeItem('jwtToken')
-  APIUtil.setAuthToken(false)
-  dispatch(logoutUser())
+  localStorage.removeItem('jwtToken');
+  APIUtil.setAuthToken(false);
+  dispatch(logoutUser());
 };
