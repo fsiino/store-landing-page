@@ -20,7 +20,8 @@ export default function (state = initialState, action) {
     case RECEIVE_USER_LOGOUT:
       return {
         isAuthenticated: false,
-        user: undefined
+        // user: undefined
+        user: ''
       };
     case RECEIVE_USER_SIGN_IN:
       return {

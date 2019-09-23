@@ -15,13 +15,13 @@ function App() {
   return (
     <div>
       <NavBarContainer/>
-      
-      <Switch>
         <AuthRoute exact path="/login" component={LoginFormContainer} />
         <AuthRoute exact path="/signup" component={SignupFormContainer} />
+      <Switch>
+        <ProtectedRoute exact path="/" component={ProductIndexContainer} />
         <ProtectedRoute exact path="/products" component={ProductIndexContainer} />
         <ProtectedRoute exact path="/products/:id" component={ProductDetailContainer} />
-        <Route exact path="/users" component={UserIndexContainer} />
+        <ProtectedRoute exact path="/users" component={UserIndexContainer} />
       </Switch>
 
       <Footer/>
