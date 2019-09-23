@@ -18,12 +18,6 @@ class ProductList extends React.Component {
     this.setState({
       currentPage: Number(e.target.id)
     });
-    document.getElementById(Number(e.target.id)).setAttribute("class", "pg-current");
-    // document.querySelectorAll("li").forEach(function(el) {
-    //   if (parseInt(el.id) !== ) {
-    //     el.style.color = "orange";
-    //   }
-    // });
     window.scrollTo(0,0);
   }
 
@@ -34,35 +28,35 @@ class ProductList extends React.Component {
     return `${1 + newDate.getMonth()}/${newDate.getDate()}/${1900 + newDate.getYear()}`;
   };
 
-  const convertTime = (time) => {
-    let newDate = new Date(time);
-    let amPm;
-    let hours = newDate.getHours();
-    let mins = newDate.getMinutes();
-    if (hours > 12) {
-      amPm = 'PM';
-      hours -= 12;
-    } else {
-      amPm = 'AM';
+    const convertTime = (time) => {
+      let newDate = new Date(time);
+      let amPm;
+      let hours = newDate.getHours();
+      let mins = newDate.getMinutes();
+      if (hours > 12) {
+        amPm = 'PM';
+        hours -= 12;
+      } else {
+        amPm = 'AM';
+      }
+      mins < 10 ? mins = `0${mins}` : mins = newDate.getMinutes();
+      return `${hours}:${mins} ${amPm}`;
+    };
+
+    const { currentPage, productsPerPage } = this.state;
+
+    // Pagination  
+    const idxOfLastProduct = currentPage * productsPerPage;
+    const idxOfFirstProduct = idxOfLastProduct - productsPerPage;
+    const currentProducts = this.props.products.slice(idxOfFirstProduct, idxOfLastProduct);
+
+    // Page Numbers
+    const pageNums = [];
+    for (let i = 1; i < Math.ceil(this.props.products.length / productsPerPage); i++) {
+      pageNums.push(i);
     }
-    mins < 10 ? mins = `0${mins}` : mins = newDate.getMinutes();
-    return `${hours}:${mins} ${amPm}`;
-  };
 
-  const { currentPage, productsPerPage } = this.state;
-
-  // Pagination  
-  const idxOfLastProduct = currentPage * productsPerPage;
-  const idxOfFirstProduct = idxOfLastProduct - productsPerPage;
-  const currentProducts = this.props.products.slice(idxOfFirstProduct, idxOfLastProduct);
-
-  // Page Numbers
-  const pageNums = [];
-  for (let i = 1; i < Math.ceil(this.props.products.length / productsPerPage); i++) {
-    pageNums.push(i);
-  }
-
-  const renderProducts = currentProducts.map((product, idx) => {
+    const renderProducts = currentProducts.map((product, idx) => {
 
     const getImgs = () => {
       let imgs = [];

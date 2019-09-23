@@ -10,7 +10,7 @@ class ProductDetail extends React.Component {
     super(props);
     this.state = {
       product: this.props.product
-    }
+    };
   }
 
   componentDidMount() {
@@ -18,7 +18,7 @@ class ProductDetail extends React.Component {
     this.props.fetchProduct(this.props.match.params.id, () => (
       this.setState({
         product: this.props.product
-      })))
+      })));
   }
 
   render() {
