@@ -59,6 +59,7 @@ class ProductDetail extends React.Component {
               <li>
                 <span>Sold by: </span>
                 {product.seller.first_name} {product.seller.last_name}
+                <img src={product.seller.media[0].sizes[0].url}/>
               </li>
               <li>
                 <span>Description: </span>

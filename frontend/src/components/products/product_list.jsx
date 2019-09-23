@@ -18,6 +18,12 @@ class ProductList extends React.Component {
     this.setState({
       currentPage: Number(e.target.id)
     });
+    document.getElementById(Number(e.target.id)).setAttribute("class", "pg-current");
+    // document.querySelectorAll("li").forEach(function(el) {
+    //   if (parseInt(el.id) !== ) {
+    //     el.style.color = "orange";
+    //   }
+    // });
     window.scrollTo(0,0);
   }
 
@@ -95,7 +101,7 @@ class ProductList extends React.Component {
       <li
         key={num}
         id={num}
-        onClick={this.handleClick}
+        onClick={this.handleClick} 
       >
         {num}&nbsp;&nbsp;
       </li>
@@ -105,13 +111,15 @@ class ProductList extends React.Component {
   return (
     <div className="products-idx-container">
       <div className="products-pg-container">
-        Page:&nbsp; {renderPageNums}
+        {/* Page:&nbsp; {renderPageNums} */}
       </div>
       <div className="products-container">
         {renderProducts}
       </div>
       <div className="products-pg-container">
-        Page:&nbsp; {renderPageNums}
+        {/* <ul> */}
+          Page:&nbsp; {renderPageNums}
+        {/* </ul> */}
       </div>
     </div>
   )

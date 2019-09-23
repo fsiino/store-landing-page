@@ -21,12 +21,21 @@
     -webkit-transition: color .4s,background-color .4s,border-color .4s;
     transition: color .4s,background-color .4s,border-color .4s;
     font-size: 15px;
-    cursor: not-allowed
   }
 
   input[type="text"], input[type="password"] {
     border: 1px solid black;
     font-size: 18px;
     line-height: 1.5;
+  }
+  
+  form {
+    ul {
+      list-style: none;
+      padding-left: 0px;
+    }
+    li {
+      color: red;
+    }
   }
 }

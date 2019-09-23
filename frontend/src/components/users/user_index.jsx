@@ -10,7 +10,6 @@ class UserIndex extends React.Component {
   }
 
   render() {
-    // debugger
     return (
       <div className="user-idx-container">
         <h2>Users with registration date/time:</h2>

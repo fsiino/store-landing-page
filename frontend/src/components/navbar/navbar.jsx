@@ -73,7 +73,7 @@ class NavBar extends React.Component {
 
     const greeting = () => {
       if (this.props.loggedIn) {
-        let currentUser = this.props.users.find(u => u._id === this.props.currentUser.id);
+        let currentUser = this.props.users.find(u => u._id === this.props.currentUser.id) || '';
         return <span>Welcome, {currentUser.handle}</span>
       } else {
         return <span>You're not logged in</span>
