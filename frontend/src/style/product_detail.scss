@@ -1,14 +1,14 @@
 .bg {
   background-color: #f7f7f7; 
-  height: 75vh;
+  // height: 75vh;
 }
 .product-detail-container {
   display: flex;
   justify-content: space-between;
   padding: 45px;
   background-color: #f7f7f7;
-  max-height: 100%;
   font-family: "HPSimplified",arial;
+  position: relative;
 }
 
 .product-detail-img-wrapper {
