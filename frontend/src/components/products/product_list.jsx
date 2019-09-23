@@ -52,7 +52,7 @@ class ProductList extends React.Component {
 
     // Page Numbers
     const pageNums = [];
-    for (let i = 1; i < Math.ceil(this.props.products.length / productsPerPage); i++) {
+    for (let i = 1; i <= Math.ceil(this.props.products.length / productsPerPage); i++) {
       pageNums.push(i);
     }
 

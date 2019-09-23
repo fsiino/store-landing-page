@@ -70,7 +70,7 @@ render() {
   const currentProducts = this.props.products.slice(idxOfFirstProduct, idxOfLastProduct);
 
   const pageNums = [];
-  for (let i = 1; i < Math.ceil(this.props.products.length / productsPerPage); i++) {
+  for (let i = 1; i <= Math.ceil(this.props.products.length / productsPerPage); i++) {
     pageNums.push(i);
   }
 
