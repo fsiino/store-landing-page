@@ -13,12 +13,12 @@ import { logout } from './actions/session_actions';
 document.addEventListener('DOMContentLoaded', () => {
   let store;
 
-  // const jwtToken = localStorage.getItem("jwtToken");
-  // if (jwtToken !== "undefined") {
-  //   // Set auth token header auth
-  //   setAuthToken(jwtToken);
-  //   // Decode token and get user info and exp
-  // }
+  const jwtToken = localStorage.getItem("jwtToken");
+  if (jwtToken !== "undefined") {
+    // Set auth token header auth
+    setAuthToken(jwtToken);
+    // Decode token and get user info and exp
+  }
 
   if (localStorage.jwtToken) {
     setAuthToken(localStorage.jwtToken);

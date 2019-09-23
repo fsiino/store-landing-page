@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { Switch, Route } from 'react-router-dom';
+import { Switch } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from './util/route_util';
 import NavBarContainer from './components/navbar/navbar_container';
 import ProductIndexContainer from './components/products/product_index_container';

@@ -21,14 +21,14 @@ router.get('/all_users', (req, res) => {
   User.find()
     .select('handle')
     .select('date')
-    .then(users => res.json( users ))
-    .catch(err => res.status(404).json({ msg: 'no users found'} ));
+    .then(users => res.json(users))
+    .catch(err => res.status(404).json({ msg: 'no users found' }));
 });
 
 router.get('/:user_id', (req, res) => {
   User.find({ user_id: req.params.user_id })
     .select('handle')
-    .then(user => res.json( user ))
+    .then(user => res.json(user))
     .catch(err => res.status(404).json({ msg: 'no user with that id' }));
 });
 
@@ -70,7 +70,6 @@ router.post('/register', (req, res) => {
 router.post('/login', (req, res) => {
   const { errors, isValid } = validateLoginInput(req.body);
 
-  console.log(errors);
 
   if (!isValid) {
     return res.status(400).json(errors);

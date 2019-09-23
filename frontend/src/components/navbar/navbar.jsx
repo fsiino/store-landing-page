@@ -28,7 +28,6 @@ class NavBar extends React.Component {
 
   render() {
 
-    
     const showGoBack = () => {
       if (
         this.props.location.pathname !== '/' && this.props.location.pathname !== '/products' && this.props.location.pathname !== '/login' &&  this.props.location.pathname !== '/signup'

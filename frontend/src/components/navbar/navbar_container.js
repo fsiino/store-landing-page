@@ -6,10 +6,11 @@ import { fetchUsers } from '../../actions/users_actions';
 import NavBar from './navbar';
 
 const mSTP = ( state ) => {
+  let currentUserId = state.session.user.id;
   return {
     loggedIn: state.session.isAuthenticated ,
     users: Object.values(state.users),
-    currentUserId: state.session.user.id || {}
+    currentUserId
   };
 };
 
@@ -21,4 +22,5 @@ const mDTP = (dispatch) => ({
 export default withRouter(connect(
   mSTP,
   mDTP
+  // { logout }
 )(NavBar));
