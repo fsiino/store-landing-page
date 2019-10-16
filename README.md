@@ -1,4 +1,4 @@
-# Store Landing Page
+# Store Landing Page Coding Challenge
 
 Live Link: <a href="http://obscure-sea-02521.herokuapp.com/#/">http://obscure-sea-02521.herokuapp.com/#/</a>
 
